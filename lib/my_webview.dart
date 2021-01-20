@@ -9,8 +9,8 @@ class MyWebview {
   static const EventChannel _eventChannel = const EventChannel('my_webview/event');
 
   //打开网页
-  static Future<String> openUrl(url) async {
-    final String version = await _channel.invokeMethod('openUrl',{"url":url});
+  static Future<String> openUrl(url,{userAgent=""}) async {
+    final String version = await _channel.invokeMethod('openUrl',{"url":url,"userAgent":userAgent});
     return version;
   }
 

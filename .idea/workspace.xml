@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5641a4b4-756c-4fc4-ba6d-23375abacae6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/AndroidInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/AndroidInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/EventBusCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/EventBusCode.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebviewPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebviewPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webview_result_code.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webview_result_code.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +58,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="423" key="GridCell.Tab.0.bottom" timestamp="1611133091744">
+    <state width="1877" height="601" key="GridCell.Tab.0.bottom" timestamp="1611133145610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="423" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611133091744" />
-    <state width="1877" height="423" key="GridCell.Tab.0.center" timestamp="1611133091744">
+    <state width="1877" height="601" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611133145610" />
+    <state width="1877" height="601" key="GridCell.Tab.0.center" timestamp="1611133145610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="423" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611133091744" />
-    <state width="1877" height="423" key="GridCell.Tab.0.left" timestamp="1611133091743">
+    <state width="1877" height="601" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611133145610" />
+    <state width="1877" height="601" key="GridCell.Tab.0.left" timestamp="1611133145609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="423" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611133091743" />
-    <state width="1877" height="423" key="GridCell.Tab.0.right" timestamp="1611133091744">
+    <state width="1877" height="601" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611133145609" />
+    <state width="1877" height="601" key="GridCell.Tab.0.right" timestamp="1611133145610">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="423" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611133091744" />
+    <state width="1877" height="601" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611133145610" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1611127439926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
