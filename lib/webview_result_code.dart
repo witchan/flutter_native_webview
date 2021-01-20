@@ -9,4 +9,8 @@ class WebViewResultCode{
   static const WEB_LOAD_FINISH=3;
   //网页关闭
   static const WEB_CLOSE=4;
+  //拼多多授权成功
+  static const PDD_AUTH_SUCCESS=5;
+  //淘宝授权成功
+  static const TB_AUTH_SUCCESS=6;
 }

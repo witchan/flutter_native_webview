@@ -2,11 +2,17 @@ package com.buydance.my_webview
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Browser
+import android.text.TextUtils
 import android.util.Log
+import android.view.KeyEvent
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.widget.LinearLayout
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.just.agentweb.AgentWeb
 import com.just.agentweb.DefaultWebClient
@@ -19,6 +25,8 @@ import org.json.JSONObject
 
 class MyWebActivity :AppCompatActivity(), WebJsInterfaceCallback {
     private var mAgentWeb: AgentWeb?=null
+//    private val schemeList= listOf("imeituan","alipay","weixin://wap/pay")
+    private val schemeList= listOf("alipay")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +51,7 @@ class MyWebActivity :AppCompatActivity(), WebJsInterfaceCallback {
                 .interceptUnkownUrl()
                 .createAgentWeb()
                 .ready()
-                .go(getUrl())
+                .go(intent.getStringExtra("url"))
 
         val settings = mAgentWeb?.getAgentWebSettings()?.webSettings
         settings?.useWideViewPort = true
@@ -54,49 +62,67 @@ class MyWebActivity :AppCompatActivity(), WebJsInterfaceCallback {
 
     //js调用Android
     override fun JsCallAndroid(msg: String) {
-
-//        try {
-//            if (!TextUtils.isEmpty(msg)){
-////                var json = jsonDecode(msg);
-////                var jump_type = json["jump_type"];
-////                switch(jump_type){
-////                    case 9:  //关闭页面
-////                    EventBusUtil.getInstance().fire(EventBusBean(SEND_WEB_CLOSE_MSG));
-////                    pop(ctx);
-////                    break;
-////                    case 1:  //打开app淘宝详情页面
-////                    push(ctx, RouterAddress.TAOBAO_GOODS_DETAIL,params: {"goodsId":json["gid"].toString()});
-////                    break;
-////                    case 2:// 下单攻略h5点击底部按钮
-////                    toOneCentPage();
-////                    break;
-////                    case 3: //预约攻略页面点击底部按钮 未登录的话先跳转到一键登录  出现蒙层引导
-////                    clickAppointeStrategy=true;
-////                    if(noLoginToLoginPage(ctx)){
-////                        toPackageHomeTab();
-////                    }
-////                    break;
-////                    case 4:  //跳转地址选择页面（加盟申请来的，要去选择小区地址）
-////                    push(ctx, RouterAddress.CHOOSE_ADDR, params: {"content":"","city":"","isWeb":true});
-////                    break;
-//                val jsonObject = JSONObject(msg)
-//                val jump_type = jsonObject.optInt("jump_type")
-//                when(jump_type){
-//                    //关闭页面
-//                    9->finish()
-//                }
-//            }
-//        }catch (e:Exception){ }
+        try {
+            if (!TextUtils.isEmpty(msg)){
+//                var json = jsonDecode(msg);
+//                var jump_type = json["jump_type"];
+//                switch(jump_type){
+//                    case 9:  //关闭页面
+//                    EventBusUtil.getInstance().fire(EventBusBean(SEND_WEB_CLOSE_MSG));
+//                    pop(ctx);
+//                    break;
+//                    case 1:  //打开app淘宝详情页面
+//                    push(ctx, RouterAddress.TAOBAO_GOODS_DETAIL,params: {"goodsId":json["gid"].toString()});
+//                    break;
+//                    case 2:// 下单攻略h5点击底部按钮
+//                    toOneCentPage();
+//                    break;
+//                    case 3: //预约攻略页面点击底部按钮 未登录的话先跳转到一键登录  出现蒙层引导
+//                    clickAppointeStrategy=true;
+//                    if(noLoginToLoginPage(ctx)){
+//                        toPackageHomeTab();
+//                    }
+//                    break;
+//                    case 4:  //跳转地址选择页面（加盟申请来的，要去选择小区地址）
+//                    push(ctx, RouterAddress.CHOOSE_ADDR, params: {"content":"","city":"","isWeb":true});
+//                    break;
+                val eventBusBean = EventBusBean(EventBusCode.JS_MSG)
+                eventBusBean.stringValue=msg
+                EventBus.getDefault().post(eventBusBean)
+                val jsonObject = JSONObject(msg)
+                val jump_type = jsonObject.optInt("jump_type")
+                when(jump_type){
+                    //关闭页面
+                    9->finish()
+                }
+            }
+        }catch (e:Exception){ }
     }
 
     private fun setListener() {
         toolbar.setNavigationOnClickListener({ v -> finish() })
     }
 
-    fun getUrl(): String? = "http://deliver.haojiequ.com/dist/index.html?v=202101121428#/strategy"
-
     private val mWebViewClient: WebViewClient = object : WebViewClient() {
+        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+            val url = request?.url.toString()
+            //scheme打开页面
+            if (schemeList.contains(url)){
+                val intent = Intent()
+                intent.setData(Uri.parse(url))
+                startActivity(intent)
+            }
+            //拼多多商城页面，视为授权成功
+            if(url.startsWith("https://mobile.yangkeduo.com/duo_cms_mall.html")){
+                EventBus.getDefault().post(EventBusBean(EventBusCode.PDD_AUTH_SUCCESS))
+                finish()
+            }
+            //淘宝授权成功
+            if (url.startsWith("https://www.dataoke.com/pmc/oauth-info.html")){
+                EventBus.getDefault().post(EventBusBean(EventBusCode.TB_AUTH_SUCCESS))
+                finish()
+            }
             return super.shouldOverrideUrlLoading(view, request)
         }
 
@@ -110,6 +136,8 @@ class MyWebActivity :AppCompatActivity(), WebJsInterfaceCallback {
         }
     }
 
+
+
     private val mWebChromeClient: WebChromeClient = object : WebChromeClient() {
         override fun onReceivedTitle(view: WebView, title: String) {
             super.onReceivedTitle(view, title)
@@ -117,6 +145,11 @@ class MyWebActivity :AppCompatActivity(), WebJsInterfaceCallback {
                 toolbar_title.setText(title)
             }
         }
+    }
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return if (mAgentWeb!!.handleKeyEvent(keyCode, event)) {
+            true
+        } else super.onKeyDown(keyCode, event)
     }
 
     override fun onPause() {

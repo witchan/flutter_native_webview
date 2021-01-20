@@ -37,9 +37,11 @@ class MyWebviewPlugin: FlutterPlugin, MethodCallHandler, EventChannel.StreamHand
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "openUrl") {
+      val url = call.argument<String>("url")
       EventBus.getDefault().register(this)
-     var intent= Intent(context,MyWebActivity::class.java)
+      val intent= Intent(context,MyWebActivity::class.java)
       intent.flags=FLAG_ACTIVITY_NEW_TASK
+      intent.putExtra("url",url)
       context.startActivity(intent)
 
     } else {
@@ -63,10 +65,13 @@ class MyWebviewPlugin: FlutterPlugin, MethodCallHandler, EventChannel.StreamHand
       EventBusCode.JS_MSG->{
         events?.success(getJsonStr(1,eventBusBean.stringValue))
       }
+      //拼多多授权成功
+      EventBusCode.PDD_AUTH_SUCCESS->events?.success(getJsonStr(5,""))
+      //淘宝授权成功
+      EventBusCode.TB_AUTH_SUCCESS->events?.success(getJsonStr(6,""))
       //网页关闭了
       EventBusCode.WEB_CLOSE->{
         if(EventBus.getDefault().isRegistered(this)) EventBus.getDefault().unregister(this)
-
         events?.success(getJsonStr(4,""))
       }
     }

@@ -32,7 +32,10 @@ class _MyAppState extends State<MyApp> {
               Text(json),
               RaisedButton(
                 onPressed: (){
-                  MyWebview.openUrl("http://deliver.haojiequ.com/dist/index.html?v=202101121428#/strategy");
+                  // MyWebview.openUrl("http://deliver.haojiequ.com/dist/index.html?v=202101121428#/strategy");
+                  // MyWebview.openUrl("https://m.ctrip.com/webapp/vacations/tour/around?allianceid=1301645&sid=3866139&ouid=1518239ae0aba0a186");
+                  // MyWebview.openUrl("https://act6.meituan.com/clover/page/adunioncps/share_coupon_new?activity=OwMkGzn6oK&utmSource=64195&utmMedium=D2BE8C23340CFAD33F143CFD4CF75F88D573FF4D12BA4094BB1EE0A6C2BF5C7E&promotionId=21389");
+                  MyWebview.openUrl("https://act6.meituan.com/clover/page/adunioncps/share_coupon_new?activity=yknUrA9Rrx&utmSource=64195&utmMedium=D2BE8C23340CFAD33F143CFD4CF75F88D573FF4D12BA4094BB1EE0A6C2BF5C7E&promotionId=20345");
                 },
                 child: Text("按钮"),
               ),
