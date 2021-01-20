@@ -18,6 +18,7 @@
 
     <application
         android:theme="@style/BaseAppTheme"
+        android:usesCleartextTraffic="true"
         >
         <activity android:name=".MyWebActivity"></activity>
     </application>

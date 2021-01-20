@@ -28,9 +28,17 @@ class _MyAppState extends State<MyApp> {
             children: [
               RaisedButton(
                 onPressed: (){
-                  MyWebview.platformVersion;
+                  MyWebview.openUrl("http://deliver.haojiequ.com/dist/index.html?v=202101121428#/strategy");
                 },
                 child: Text("按钮"),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  MyWebview.webListen(onEvent: (msg){
+                    print("+++${msg}++++");
+                  });
+                },
+                child: Text("数据监听"),
               )
             ],
           )
