@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - my_webview (0.0.1):
+    - Flutter
+    - SnapKit
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - my_webview (from `.symlinks/plugins/my_webview/ios`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  my_webview:
+    :path: ".symlinks/plugins/my_webview/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  my_webview: 37b05e07a4e7b1bcfcde06ca64b9db600dc63abc
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.1

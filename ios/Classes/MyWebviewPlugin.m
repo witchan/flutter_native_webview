@@ -10,6 +10,6 @@
 
 @implementation MyWebviewPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftMyWebviewPlugin registerWithRegistrar:registrar];
+    [SwiftMyWebviewPlugin registerWithRegistrar:registrar];
 }
 @end
