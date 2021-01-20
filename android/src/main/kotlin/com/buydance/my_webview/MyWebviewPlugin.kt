@@ -15,6 +15,7 @@ import io.flutter.plugin.common.MethodChannel.Result
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import org.json.JSONObject
 
 /** MyWebviewPlugin */
 class MyWebviewPlugin: FlutterPlugin, MethodCallHandler, EventChannel.StreamHandler {
@@ -60,9 +61,21 @@ class MyWebviewPlugin: FlutterPlugin, MethodCallHandler, EventChannel.StreamHand
     when(eventBusBean.code){
       //js消息
       EventBusCode.JS_MSG->{
-        Log.e("qwer","======${null==events}========"+eventBusBean.stringValue)
-        events?.success(eventBusBean.stringValue)
+        events?.success(getJsonStr(1,eventBusBean.stringValue))
+      }
+      //网页关闭了
+      EventBusCode.WEB_CLOSE->{
+        if(EventBus.getDefault().isRegistered(this)) EventBus.getDefault().unregister(this)
+
+        events?.success(getJsonStr(4,""))
       }
     }
+  }
+
+  fun getJsonStr(code:Int,msg:String):String{
+    val jsonObject = JSONObject()
+    jsonObject.put("code",code)
+    jsonObject.put("msg",msg)
+    return jsonObject.toString()
   }
 }

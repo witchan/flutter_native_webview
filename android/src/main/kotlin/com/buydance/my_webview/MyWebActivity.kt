@@ -13,6 +13,7 @@ import com.just.agentweb.DefaultWebClient
 import com.just.agentweb.WebChromeClient
 import com.just.agentweb.WebViewClient
 import kotlinx.android.synthetic.main.my_webview_layout.*
+import org.greenrobot.eventbus.EventBus
 import org.json.JSONObject
 
 
@@ -130,7 +131,7 @@ class MyWebActivity :AppCompatActivity(), WebJsInterfaceCallback {
 
     override fun onDestroy() {
         super.onDestroy()
-        //mAgentWeb.destroy();
+        EventBus.getDefault().post(EventBusBean(EventBusCode.WEB_CLOSE))
         mAgentWeb!!.webLifeCycle.onDestroy()
     }
 }

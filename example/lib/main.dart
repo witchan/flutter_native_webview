@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -14,6 +16,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var json="";
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +29,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Text(json),
               RaisedButton(
                 onPressed: (){
                   MyWebview.openUrl("http://deliver.haojiequ.com/dist/index.html?v=202101121428#/strategy");
@@ -35,7 +39,14 @@ class _MyAppState extends State<MyApp> {
               RaisedButton(
                 onPressed: (){
                   MyWebview.webListen(onEvent: (msg){
-                    print("+++${msg}++++");
+                    setState(() {
+                      json=msg.toString();
+                    });
+                    //json 格式{"code":1,"msg":"{"jump_type":2}"}
+                    var decode = jsonDecode(msg);
+                    var code = decode["code"];
+                    var m = decode["msg"];
+                    print("返回数据：code:${code}   msg:${m}");
                   });
                 },
                 child: Text("数据监听"),
