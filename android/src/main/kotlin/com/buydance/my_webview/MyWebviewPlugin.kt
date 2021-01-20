@@ -40,6 +40,7 @@ class MyWebviewPlugin: FlutterPlugin, MethodCallHandler, EventChannel.StreamHand
      var intent= Intent(context,MyWebActivity::class.java)
       intent.flags=FLAG_ACTIVITY_NEW_TASK
       context.startActivity(intent)
+
     } else {
       result.notImplemented()
     }

@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5641a4b4-756c-4fc4-ba6d-23375abacae6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebviewPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/buydance/my_webview/MyWebviewPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/my_webview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/my_webview.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +15,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="969bcca5" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nHjWhcMMYsSTXEjnrEWOcc27Jm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -51,21 +55,21 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="622" key="GridCell.Tab.0.bottom" timestamp="1611126081265">
+    <state width="1877" height="550" key="GridCell.Tab.0.bottom" timestamp="1611126659319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="622" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611126081265" />
-    <state width="1877" height="622" key="GridCell.Tab.0.center" timestamp="1611126081265">
+    <state width="1877" height="550" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611126659319" />
+    <state width="1877" height="550" key="GridCell.Tab.0.center" timestamp="1611126659319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="622" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611126081265" />
-    <state width="1877" height="622" key="GridCell.Tab.0.left" timestamp="1611126081265">
+    <state width="1877" height="550" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611126659319" />
+    <state width="1877" height="550" key="GridCell.Tab.0.left" timestamp="1611126659319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="622" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611126081265" />
-    <state width="1877" height="622" key="GridCell.Tab.0.right" timestamp="1611126081265">
+    <state width="1877" height="550" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611126659319" />
+    <state width="1877" height="550" key="GridCell.Tab.0.right" timestamp="1611126659319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="622" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611126081265" />
+    <state width="1877" height="550" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611126659319" />
   </component>
 </project>
